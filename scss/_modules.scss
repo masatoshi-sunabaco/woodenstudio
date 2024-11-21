@@ -1,0 +1,111 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+
+.section-head{
+  margin-bottom: 96px;
+  @include mq(sp){
+    margin-bottom: 48px;
+  }
+
+  &__ja{
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+
+    @include mq(sp){
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  }
+
+  &--brown{
+    color: $mainColor2;
+  }
+
+  &--white{
+    color: $textColor2;
+  }
+}
+
+// ナビゲーション
+.nav{
+  &-menu{
+    //横並びに表示する
+    display: flex;
+    // センターに表示（@aic)
+    align-items: center;
+    // 均等に文字間に余白を入れる（flexとセットで使用）
+    column-gap: 32px;
+    @include mq(sp){
+      flex-flow: column;
+      row-gap: 32px;
+    }
+  }
+}
+
+.fa-instagram{
+  //@fz24
+  font-size: 24px;
+}
+
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  // 横幅
+  width: 212px;
+  // 高さ
+  height: 48px;
+  // 角
+  border-radius: 4px;
+  // フォント
+  font-family: $sans;
+
+  .fa-envelope{
+    margin-top: 2px;
+    font-size: 16px;
+  }
+
+&--fill{
+  background-color: $mainColor1;
+  color: $textColor2;
+}
+&--stroke{
+  border: 2px solid $mainColor1;
+  color: $mainColor1;
+}
+
+}
+
+.social-icons{
+  display: flex;
+  column-gap: 16px;
+  @include mq(sp){
+    column-gap: 12px;
+  }
+
+  .social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $accentColor;
+    @include mq(sp){
+      width: 32px;
+      height: 32px;
+    }
+
+    &__icon{
+      color: $textColor2;
+      font-size: 24px;
+      @include mq(sp){
+        font-size: 16px;
+      }
+    }
+  }
+}
